@@ -29,7 +29,7 @@ In case of an upload, the above 9-byte control information is immediately follow
 Client Program
 The client takes up to 6 parameters and can be invoked in 3 different ways:
 
-1. terminate server: client <host> <port> F
+1. terminate server: client host port F
 2. download: client <host> <port> G<key> <file name> <recv size>
 3. upload: client <host> <port> P<key> <file name> <send size> <wait time>
 

@@ -1,21 +1,21 @@
-#File-Transfer
-##About
+# File-Transfer
+## About
 This is a server that facilitates a file exchange between clients.
 A server and a client with the specifications given below.
 Communication between client and server uses TCP.
 
 
-##Details
+## Details
 
 
-###Communication
+### Communication
 The data stream sent from the client to the server must adhere to the following format:
 1 ASCII character: G (get = download), P (put = upload), or F (finish = termination)
 8 ASCII characters (padded at the end by '\0'-characters, if necessary)
 In case of an upload, the above 9-byte control information is immediately followed by the binary data stream of the file. In case of download, the server responds with the binary data stream of the file. When a client has completed a file upload, it closes the connection. Then the server closes the download connection to the other client.
 
 
-###Server
+### Server
 Server program that can handle an arbitrary number of concurrent connections and file exchanges, only limited by system configuration or memory.
 The server is started without any parameters and creates a TCP socket at an OS-assigned port.
 It will print out the assigned port number, which is used when starting clients.
@@ -30,7 +30,7 @@ Multiple clients might specify the same key and operation. The server can always
 
 
 
-###Client Program
+### Client Program
 The client takes up to 6 parameters and can be invoked in 3 different ways:
 
 1. terminate server: ./client \<host> \<port> F
